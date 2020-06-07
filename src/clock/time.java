@@ -116,6 +116,7 @@ public class time extends javax.swing.JFrame {
 
     private void CANCELActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CANCELActionPerformed
         System.exit(0);
+        dispose();
     }//GEN-LAST:event_CANCELActionPerformed
 
     private void CANCEL2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CANCEL2ActionPerformed
