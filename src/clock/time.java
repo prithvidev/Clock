@@ -54,10 +54,12 @@ public class time extends javax.swing.JFrame {
         time1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(400, 290));
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CANCEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/exit.png"))); // NOI18N
         CANCEL.setContentAreaFilled(false);
@@ -66,6 +68,8 @@ public class time extends javax.swing.JFrame {
                 CANCELActionPerformed(evt);
             }
         });
+        getContentPane().add(CANCEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 0, 27, -1));
+        CANCEL.getAccessibleContext().setAccessibleName("");
 
         CANCEL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/minimize.png"))); // NOI18N
         CANCEL2.setContentAreaFilled(false);
@@ -74,46 +78,23 @@ public class time extends javax.swing.JFrame {
                 CANCEL2ActionPerformed(evt);
             }
         });
+        getContentPane().add(CANCEL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 27, -1));
 
-        time1.setFont(new java.awt.Font("Times New Roman", 1, 68)); // NOI18N
+        time1.setFont(new java.awt.Font("Dialog", 1, 68)); // NOI18N
         time1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 60, 398, 111));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/clock.png"))); // NOI18N
         jLabel1.setText("Clock");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 69, 33));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CANCEL2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(CANCEL, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CANCEL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CANCEL2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 435, 10));
 
-        CANCEL.getAccessibleContext().setAccessibleName("");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/lg.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 180));
 
         getAccessibleContext().setAccessibleParent(this);
 
@@ -168,6 +149,7 @@ public class time extends javax.swing.JFrame {
     private javax.swing.JButton CANCEL;
     private javax.swing.JButton CANCEL2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel time1;
     // End of variables declaration//GEN-END:variables
