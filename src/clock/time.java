@@ -70,7 +70,8 @@ public class time extends javax.swing.JFrame {
             }
         });
 
-        time1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        time1.setFont(new java.awt.Font("Times New Roman", 1, 68)); // NOI18N
+        time1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
