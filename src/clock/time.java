@@ -6,6 +6,7 @@
 package clock;
 
 import java.util.Calendar;
+import static java.util.Calendar.AM_PM;
 import java.util.GregorianCalendar;
 /**
  *
@@ -26,7 +27,11 @@ public class time extends javax.swing.JFrame {
                     int sec = cal.get(Calendar.SECOND);
                     int am_pm = cal.get(Calendar.AM_PM);
                     
-                    String time = hour+":"+min+":"+sec;
+                    String dn = "";
+                    if(AM_PM == 1){dn ="PM";}
+                    else{dn = "AM";}
+                    
+                    String time = hour+":"+min+":"+sec+" "+dn;
                     time1.setText(time);
                 }
             }
@@ -88,11 +93,11 @@ public class time extends javax.swing.JFrame {
                 .addComponent(CANCEL2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(CANCEL, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
             .addComponent(jSeparator1)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
