@@ -26,13 +26,18 @@ public class time extends javax.swing.JFrame {
                     int min = cal.get(Calendar.MINUTE);
                     int sec = cal.get(Calendar.SECOND);
                     int am_pm = cal.get(Calendar.AM_PM);
+                    int day = cal.get(Calendar.DATE);
+                    int month = cal.get(Calendar.MONTH);
+                    int year = cal.get(Calendar.YEAR);
                     
                     String dn = "";
                     if(AM_PM == 1){dn ="PM";}
                     else{dn = "AM";}
                     
                     String time = hour+":"+min+":"+sec+" "+dn;
+                    String dat = day+" / "+month+" / "+year;
                     time1.setText(time);
+                    date.setText(dat);
                 }
             }
         
@@ -54,6 +59,7 @@ public class time extends javax.swing.JFrame {
         time1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        date = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,7 +88,7 @@ public class time extends javax.swing.JFrame {
 
         time1.setFont(new java.awt.Font("Dialog", 1, 68)); // NOI18N
         time1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 60, 398, 111));
+        getContentPane().add(time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 60, 398, 90));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -93,8 +99,13 @@ public class time extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 435, 10));
 
+        date.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        date.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 340, 30));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/lg.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 180));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 190));
 
         getAccessibleContext().setAccessibleParent(this);
 
@@ -148,6 +159,7 @@ public class time extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CANCEL;
     private javax.swing.JButton CANCEL2;
+    private javax.swing.JLabel date;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
