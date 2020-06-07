@@ -5,17 +5,34 @@
  */
 package clock;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 /**
  *
  * @author PrithviDevKumar
  */
 public class time extends javax.swing.JFrame {
 
-    /**
-     * Creates new form time
-     */
+    int timerun=0;
     public time() {
         initComponents();
+        
+        new Thread(){
+            public void run(){
+                while(timerun == 0){
+                    Calendar cal = new GregorianCalendar();
+                    int hour = cal.get(Calendar.HOUR);
+                    int min = cal.get(Calendar.MINUTE);
+                    int sec = cal.get(Calendar.SECOND);
+                    int am_pm = cal.get(Calendar.AM_PM);
+                    
+                    String time = hour+":"+min+":"+sec;
+                    time1.setText(time);
+                }
+            }
+        
+            
+        }.start();
     }
 
     /**
