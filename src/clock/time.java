@@ -15,6 +15,8 @@ import java.util.GregorianCalendar;
 public class time extends javax.swing.JFrame {
 
     int timerun=0;
+    int xmouse;
+    int ymouse;
     public time() {
         initComponents();
         
@@ -31,8 +33,14 @@ public class time extends javax.swing.JFrame {
                     int year = cal.get(Calendar.YEAR);
                     
                     String dn = "";
-                    if(AM_PM == 1){dn ="PM";}
-                    else{dn = "AM";}
+                    if(am_pm == 1)
+                    {
+                        dn ="PM";
+                    }
+                    else
+                    {
+                        dn = "AM";
+                    }
                     
                     String time = hour+":"+min+":"+sec+" "+dn;
                     String dat = day+" / "+month+" / "+year;
@@ -54,11 +62,12 @@ public class time extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        CANCEL = new javax.swing.JButton();
-        CANCEL2 = new javax.swing.JButton();
-        time1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        CANCEL2 = new javax.swing.JButton();
+        CANCEL = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        time1 = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -67,15 +76,34 @@ public class time extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CANCEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/exit.png"))); // NOI18N
-        CANCEL.setContentAreaFilled(false);
-        CANCEL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CANCELActionPerformed(evt);
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel1MouseMoved(evt);
             }
         });
-        getContentPane().add(CANCEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 0, 27, -1));
-        CANCEL.getAccessibleContext().setAccessibleName("");
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/clock.png"))); // NOI18N
+        jLabel1.setText("Clock");
+        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabel1MouseDragged(evt);
+            }
+        });
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 69, 33));
 
         CANCEL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/minimize.png"))); // NOI18N
         CANCEL2.setContentAreaFilled(false);
@@ -84,20 +112,25 @@ public class time extends javax.swing.JFrame {
                 CANCEL2ActionPerformed(evt);
             }
         });
-        getContentPane().add(CANCEL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 27, -1));
+        jPanel1.add(CANCEL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 27, -1));
+
+        CANCEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/exit.png"))); // NOI18N
+        CANCEL.setContentAreaFilled(false);
+        CANCEL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CANCELActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CANCEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 0, 27, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/lg.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 32));
 
         time1.setFont(new java.awt.Font("Dialog", 1, 68)); // NOI18N
         time1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 60, 398, 90));
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clock/clock.png"))); // NOI18N
-        jLabel1.setText("Clock");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 69, 33));
-
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 435, 10));
 
         date.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -120,6 +153,30 @@ public class time extends javax.swing.JFrame {
     private void CANCEL2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CANCEL2ActionPerformed
        this.setExtendedState(time.ICONIFIED);
     }//GEN-LAST:event_CANCEL2ActionPerformed
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1MouseClicked
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+       xmouse = evt.getX();
+       ymouse = evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1MouseMoved
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x-xmouse, y-ymouse);
+    }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseDragged
 
     /**
      * @param args the command line arguments
@@ -162,7 +219,8 @@ public class time extends javax.swing.JFrame {
     private javax.swing.JLabel date;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel time1;
     // End of variables declaration//GEN-END:variables
 }
